@@ -1,0 +1,65 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug MIPS Test",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/mips-test",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "lldb",
+        "preLaunchTask": "build with clang23",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb/lldb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ]
+      },
+      {
+        "name": "Debug MIPS Assemble",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/mips-assemble",
+        "args": ["${workspaceFolder}/test.asm"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "lldb",
+        "preLaunchTask": "build with clang23"
+      },
+      {
+        "name": "Debug MIPS Interpret",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/mips-interpret",
+        "args": ["${workspaceFolder}/test.asm"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "lldb",
+        "preLaunchTask": "build with clang23"
+      },
+      {
+        "name": "Debug MIPS Execute",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/mips-execute",
+        "args": ["${workspaceFolder}/test.bin"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "lldb",
+        "preLaunchTask": "build with clang23"
+      }
+    ]
+  }
+  

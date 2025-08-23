@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MIPS_Interpreter",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "mips-assemble::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mips-assemble-Debug-31d811c266d8945afb01.json",
+					"name" : "mips-assemble",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mips-execute::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mips-execute-Debug-83e80a411b55ece87599.json",
+					"name" : "mips-execute",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mips-interpret::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mips-interpret-Debug-a6a6baa123496612f177.json",
+					"name" : "mips-interpret",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mips-test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mips-test-Debug-f03b4703f4de8fac41d2.json",
+					"name" : "mips-test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mips_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mips_core-Debug-716321f89112d25b16f3.json",
+					"name" : "mips_core",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+		"source" : "/Users/luisgonzales/Desktop/cpp_projects/MIPS"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -g -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/mips-interpret.dir/src/mips_interpret.cpp.o" -o mips-interpret  libmips_core.a

@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build with clang23",
+        "type": "shell",
+        "command": "make",
+        "args": ["-j4"],
+        "options": {
+          "cwd": "${workspaceFolder}/build"
+        },
+        "dependsOn": "cmake configure",
+        "problemMatcher": ["$gcc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "cmake configure",
+        "type": "shell",
+        "command": "cmake",
+        "args": [".."],
+        "options": {
+          "cwd": "${workspaceFolder}/build"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "clean",
+        "type": "shell",
+        "command": "make",
+        "args": ["clean"],
+        "options": {
+          "cwd": "${workspaceFolder}/build"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+  

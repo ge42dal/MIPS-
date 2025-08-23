@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips_core.dir/src/mips_core.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_core.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_core.cpp",
+  "output": "CMakeFiles/mips_core.dir/src/mips_core.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/cpu_instructions.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/cpu_instructions.cpp",
+  "output": "CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips_core.dir/src/assembler.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/assembler.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/assembler.cpp",
+  "output": "CMakeFiles/mips_core.dir/src/assembler.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-assemble.dir/src/mips_assemble.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_assemble.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_assemble.cpp",
+  "output": "CMakeFiles/mips-assemble.dir/src/mips_assemble.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-interpret.dir/src/mips_interpret.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_interpret.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_interpret.cpp",
+  "output": "CMakeFiles/mips-interpret.dir/src/mips_interpret.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-execute.dir/src/mips_execute.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_execute.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_execute.cpp",
+  "output": "CMakeFiles/mips-execute.dir/src/mips_execute.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-test.dir/src/main.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/main.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/main.cpp",
+  "output": "CMakeFiles/mips-test.dir/src/main.cpp.o"
+}
+]
