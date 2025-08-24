@@ -169,6 +169,19 @@ mips-execute/fast:
 .PHONY : mips-execute/fast
 
 #=============================================================================
+# Target rules for targets named mips-debug
+
+# Build rule for target.
+mips-debug: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mips-debug
+.PHONY : mips-debug
+
+# fast build rule for target.
+mips-debug/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-debug.dir/build.make CMakeFiles/mips-debug.dir/build
+.PHONY : mips-debug/fast
+
+#=============================================================================
 # Target rules for targets named mips-test
 
 # Build rule for target.
@@ -228,6 +241,54 @@ src/cpu_instructions.s: src/cpu_instructions.cpp.s
 src/cpu_instructions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips_core.dir/build.make CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.s
 .PHONY : src/cpu_instructions.cpp.s
+
+src/debug_main.o: src/debug_main.cpp.o
+.PHONY : src/debug_main.o
+
+# target to build an object file
+src/debug_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-debug.dir/build.make CMakeFiles/mips-debug.dir/src/debug_main.cpp.o
+.PHONY : src/debug_main.cpp.o
+
+src/debug_main.i: src/debug_main.cpp.i
+.PHONY : src/debug_main.i
+
+# target to preprocess a source file
+src/debug_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-debug.dir/build.make CMakeFiles/mips-debug.dir/src/debug_main.cpp.i
+.PHONY : src/debug_main.cpp.i
+
+src/debug_main.s: src/debug_main.cpp.s
+.PHONY : src/debug_main.s
+
+# target to generate assembly for a file
+src/debug_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-debug.dir/build.make CMakeFiles/mips-debug.dir/src/debug_main.cpp.s
+.PHONY : src/debug_main.cpp.s
+
+src/debugger.o: src/debugger.cpp.o
+.PHONY : src/debugger.o
+
+# target to build an object file
+src/debugger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips_core.dir/build.make CMakeFiles/mips_core.dir/src/debugger.cpp.o
+.PHONY : src/debugger.cpp.o
+
+src/debugger.i: src/debugger.cpp.i
+.PHONY : src/debugger.i
+
+# target to preprocess a source file
+src/debugger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips_core.dir/build.make CMakeFiles/mips_core.dir/src/debugger.cpp.i
+.PHONY : src/debugger.cpp.i
+
+src/debugger.s: src/debugger.cpp.s
+.PHONY : src/debugger.s
+
+# target to generate assembly for a file
+src/debugger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips_core.dir/build.make CMakeFiles/mips_core.dir/src/debugger.cpp.s
+.PHONY : src/debugger.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -358,6 +419,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mips-assemble"
+	@echo "... mips-debug"
 	@echo "... mips-execute"
 	@echo "... mips-interpret"
 	@echo "... mips-test"
@@ -368,6 +430,12 @@ help:
 	@echo "... src/cpu_instructions.o"
 	@echo "... src/cpu_instructions.i"
 	@echo "... src/cpu_instructions.s"
+	@echo "... src/debug_main.o"
+	@echo "... src/debug_main.i"
+	@echo "... src/debug_main.s"
+	@echo "... src/debugger.o"
+	@echo "... src/debugger.i"
+	@echo "... src/debugger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

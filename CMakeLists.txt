@@ -15,6 +15,7 @@ set(CORE_SOURCES
     src/mips_core.cpp
     src/cpu_instructions.cpp
     src/assembler.cpp
+    src/debugger.cpp
 )
 
 # Create static library for the core functionality
@@ -29,6 +30,10 @@ target_link_libraries(mips-interpret mips_core)
 
 add_executable(mips-execute src/mips_execute.cpp)
 target_link_libraries(mips-execute mips_core)
+
+# Create debugger executable
+add_executable(mips-debug src/debug_main.cpp)
+target_link_libraries(mips-debug mips_core)
 
 # Optional: Create a test executable
 add_executable(mips-test src/main.cpp)

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mips_core.dir/src/assembler.cpp.o.d"
   "CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o"
   "CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o.d"
+  "CMakeFiles/mips_core.dir/src/debugger.cpp.o"
+  "CMakeFiles/mips_core.dir/src/debugger.cpp.o.d"
   "CMakeFiles/mips_core.dir/src/mips_core.cpp.o"
   "CMakeFiles/mips_core.dir/src/mips_core.cpp.o.d"
   "libmips_core.a"

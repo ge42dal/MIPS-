@@ -114,11 +114,26 @@ CMakeFiles/mips_core.dir/src/assembler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mips_core.dir/src/assembler.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/assembler.cpp -o CMakeFiles/mips_core.dir/src/assembler.cpp.s
 
+CMakeFiles/mips_core.dir/src/debugger.cpp.o: CMakeFiles/mips_core.dir/flags.make
+CMakeFiles/mips_core.dir/src/debugger.cpp.o: /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/debugger.cpp
+CMakeFiles/mips_core.dir/src/debugger.cpp.o: CMakeFiles/mips_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mips_core.dir/src/debugger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mips_core.dir/src/debugger.cpp.o -MF CMakeFiles/mips_core.dir/src/debugger.cpp.o.d -o CMakeFiles/mips_core.dir/src/debugger.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/debugger.cpp
+
+CMakeFiles/mips_core.dir/src/debugger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mips_core.dir/src/debugger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/debugger.cpp > CMakeFiles/mips_core.dir/src/debugger.cpp.i
+
+CMakeFiles/mips_core.dir/src/debugger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mips_core.dir/src/debugger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/debugger.cpp -o CMakeFiles/mips_core.dir/src/debugger.cpp.s
+
 # Object files for target mips_core
 mips_core_OBJECTS = \
 "CMakeFiles/mips_core.dir/src/mips_core.cpp.o" \
 "CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o" \
-"CMakeFiles/mips_core.dir/src/assembler.cpp.o"
+"CMakeFiles/mips_core.dir/src/assembler.cpp.o" \
+"CMakeFiles/mips_core.dir/src/debugger.cpp.o"
 
 # External object files for target mips_core
 mips_core_EXTERNAL_OBJECTS =
@@ -126,9 +141,10 @@ mips_core_EXTERNAL_OBJECTS =
 libmips_core.a: CMakeFiles/mips_core.dir/src/mips_core.cpp.o
 libmips_core.a: CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o
 libmips_core.a: CMakeFiles/mips_core.dir/src/assembler.cpp.o
+libmips_core.a: CMakeFiles/mips_core.dir/src/debugger.cpp.o
 libmips_core.a: CMakeFiles/mips_core.dir/build.make
 libmips_core.a: CMakeFiles/mips_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libmips_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libmips_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/mips_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mips_core.dir/link.txt --verbose=$(VERBOSE)
 

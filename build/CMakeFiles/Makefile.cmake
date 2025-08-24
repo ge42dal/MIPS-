@@ -60,5 +60,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mips-assemble.dir/DependInfo.cmake"
   "CMakeFiles/mips-interpret.dir/DependInfo.cmake"
   "CMakeFiles/mips-execute.dir/DependInfo.cmake"
+  "CMakeFiles/mips-debug.dir/DependInfo.cmake"
   "CMakeFiles/mips-test.dir/DependInfo.cmake"
   )

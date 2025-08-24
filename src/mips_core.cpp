@@ -5,11 +5,11 @@
 
 namespace mips {
 
-// MachineState implementation
+// machinestate implementation
 MachineState::MachineState() 
     : pc_(0), hi_(0), lo_(0) {
-    registers_.fill(0);
-    // Memory pages are allocated on-demand, no upfront allocation
+    registers_.fill(0); // initialize all 32 registers to 0
+    
 }
 
 uint32_t MachineState::get_register(Register reg) const {
@@ -37,23 +37,23 @@ void MachineState::set_register(Register reg, uint32_t value) {
 
 uint8_t MachineState::load_byte(uint32_t address) const {
     if (static_cast<uint64_t>(address) >= MEMORY_SIZE) {
-        throw std::out_of_range("Memory address out of bounds");
+        throw std::out_of_range("Memory address out of bounds"); // not enough mem
     }
     uint32_t page_index = get_page_index(address);
     uint32_t page_offset = get_page_offset(address);
     
     const auto* page = get_page(page_index);
     if (!page) {
-        return 0; // Uninitialized memory reads as 0
+        return 0; // uninitialized memory reads as 0
     }
-    return (*page)[page_offset];
+    return (*page)[page_offset]; // dereffrence pointer and access @ offset 
 }
 
 uint16_t MachineState::load_half(uint32_t address) const {
     if (static_cast<uint64_t>(address) + 1 >= MEMORY_SIZE) {
         throw std::out_of_range("Memory address out of bounds");
     }
-    // Little-endian
+    // little-endian
     return static_cast<uint16_t>(load_byte(address)) | 
            (static_cast<uint16_t>(load_byte(address + 1)) << 8);
 }
@@ -62,7 +62,7 @@ uint32_t MachineState::load_word(uint32_t address) const {
     if (static_cast<uint64_t>(address) + 3 >= MEMORY_SIZE) {
         throw std::out_of_range("Memory address out of bounds");
     }
-    // Little-endian
+    // little-endian
     return static_cast<uint32_t>(load_byte(address)) |
            (static_cast<uint32_t>(load_byte(address + 1)) << 8) |
            (static_cast<uint32_t>(load_byte(address + 2)) << 16) |
@@ -84,7 +84,7 @@ void MachineState::store_half(uint32_t address, uint16_t value) {
     if (static_cast<uint64_t>(address) + 1 >= MEMORY_SIZE) {
         throw std::out_of_range("Memory address out of bounds");
     }
-    // Little-endian
+    // little-endian
     store_byte(address, static_cast<uint8_t>(value & 0xFF));
     store_byte(address + 1, static_cast<uint8_t>((value >> 8) & 0xFF));
 }
@@ -93,7 +93,7 @@ void MachineState::store_word(uint32_t address, uint32_t value) {
     if (static_cast<uint64_t>(address) + 3 >= MEMORY_SIZE) {
         throw std::out_of_range("Memory address out of bounds");
     }
-    // Little-endian
+    // little-endian
     store_byte(address, static_cast<uint8_t>(value & 0xFF));
     store_byte(address + 1, static_cast<uint8_t>((value >> 8) & 0xFF));
     store_byte(address + 2, static_cast<uint8_t>((value >> 16) & 0xFF));
@@ -133,20 +133,20 @@ const std::array<uint8_t, MachineState::PAGE_SIZE>* MachineState::get_page(uint3
     return nullptr; // Page doesn't exist
 }
 
-// Instruction implementation
+// instruction implementation
 Instruction Instruction::decode(uint32_t instruction_word) {
     Instruction instr;
     
-    instr.opcode = (instruction_word >> 26) & 0x3F;
-    instr.rs = (instruction_word >> 21) & 0x1F;
-    instr.rt = (instruction_word >> 16) & 0x1F;
-    instr.rd = (instruction_word >> 11) & 0x1F;
-    instr.shamt = (instruction_word >> 6) & 0x1F;
-    instr.function = instruction_word & 0x3F;
-    instr.immediate = instruction_word & 0xFFFF;
-    instr.address = instruction_word & 0x3FFFFFF;
+    instr.opcode = (instruction_word >> 26) & 0x3F; // len 5
+    instr.rs = (instruction_word >> 21) & 0x1F; // len 5
+    instr.rt = (instruction_word >> 16) & 0x1F; // len 5
+    instr.rd = (instruction_word >> 11) & 0x1F; // len 5
+    instr.shamt = (instruction_word >> 6) & 0x1F; // len 5
+    instr.function = instruction_word & 0x3F; // len 6
+    instr.immediate = instruction_word & 0xFFFF; // 16 lower bits (i-type)
+    instr.address = instruction_word & 0x3FFFFFF; // 26 lower bits (j-type)
     
-    // Determine instruction type based on opcode
+    // determine instruction type based on opcode
     if (instr.opcode == 0) {
         instr.type = InstructionType::R_TYPE;
     } else if (instr.opcode == 2 || instr.opcode == 3) {
@@ -155,7 +155,7 @@ Instruction Instruction::decode(uint32_t instruction_word) {
         instr.type = InstructionType::I_TYPE;
     }
     
-    // Set default category (will be overridden by assembler)
+    // set default category (will be overridden by assembler)
     instr.category = InstructionCategory::ARITH_LOGIC;
     
     return instr;
@@ -225,7 +225,7 @@ void CPU::execute_instruction(const Instruction& instr) {
             break;
     }
     
-    // Increment PC for most instructions (jumps/branches handle PC themselves)
+    // increment PC for most instructions (jumps/branches handle PC themselves)
     if (instr.category != InstructionCategory::JUMP && 
         instr.category != InstructionCategory::JUMP_REG &&
         instr.category != InstructionCategory::BRANCH &&
@@ -244,17 +244,17 @@ void CPU::run_single_step() {
     if (halted_) return;
     
     uint32_t pc = state_.get_pc();
-    uint32_t instruction_word = state_.load_word(pc);
+    uint32_t instruction_word = state_.load_word(pc); // load instruction from memory
     
-    // Check for null instruction
+    // check for null instruction
     if (instruction_word == 0) {
-        state_.set_pc(pc + 4); // Skip null instruction (NOP)
+        state_.set_pc(pc + 4); // skip null instruction 
         return;
     }
     
-    Instruction instr = Instruction::decode(instruction_word);
+    Instruction instr = Instruction::decode(instruction_word); // assign attributes to instr
     
-    // Set instruction category and name based on opcode/function
+    // set instruction category and name based on opcode/function (override default)
     determine_instruction_info(instr);
     
     execute_instruction(instr);

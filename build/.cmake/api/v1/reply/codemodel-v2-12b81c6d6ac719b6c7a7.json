@@ -19,7 +19,8 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -38,7 +39,8 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -47,35 +49,42 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "mips-assemble::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mips-assemble-Debug-31d811c266d8945afb01.json",
+					"jsonFile" : "target-mips-assemble-Debug-c8874fdeeb00428a14ff.json",
 					"name" : "mips-assemble",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "mips-debug::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mips-debug-Debug-7e5a55559c746f46c6c4.json",
+					"name" : "mips-debug",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "mips-execute::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mips-execute-Debug-83e80a411b55ece87599.json",
+					"jsonFile" : "target-mips-execute-Debug-480a3c2a2be7f2c39f1e.json",
 					"name" : "mips-execute",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "mips-interpret::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mips-interpret-Debug-a6a6baa123496612f177.json",
+					"jsonFile" : "target-mips-interpret-Debug-d35ed53538531762bb9c.json",
 					"name" : "mips-interpret",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "mips-test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mips-test-Debug-f03b4703f4de8fac41d2.json",
+					"jsonFile" : "target-mips-test-Debug-34834dfb753203306991.json",
 					"name" : "mips-test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "mips_core::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mips_core-Debug-716321f89112d25b16f3.json",
+					"jsonFile" : "target-mips_core-Debug-1cdbf68e126438709d33.json",
 					"name" : "mips_core",
 					"projectIndex" : 0
 				}

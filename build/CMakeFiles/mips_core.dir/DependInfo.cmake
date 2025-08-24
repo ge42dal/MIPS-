@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/assembler.cpp" "CMakeFiles/mips_core.dir/src/assembler.cpp.o" "gcc" "CMakeFiles/mips_core.dir/src/assembler.cpp.o.d"
   "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/cpu_instructions.cpp" "CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o" "gcc" "CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o.d"
+  "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/debugger.cpp" "CMakeFiles/mips_core.dir/src/debugger.cpp.o" "gcc" "CMakeFiles/mips_core.dir/src/debugger.cpp.o.d"
   "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_core.cpp" "CMakeFiles/mips_core.dir/src/mips_core.cpp.o" "gcc" "CMakeFiles/mips_core.dir/src/mips_core.cpp.o.d"
   )
 

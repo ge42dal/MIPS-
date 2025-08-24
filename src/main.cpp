@@ -47,11 +47,11 @@ main:
         std::cout << "\nExecuting program..." << std::endl;
         std::cout << "Output: ";
         
-        // Debug: Print first few instructions
+        // debug: Print first few instructions
         std::cout << "\nFirst instruction at PC=0: 0x" << std::hex 
                   << cpu.get_state().load_word(0) << std::dec << std::endl;
         
-        // Run with step limit to avoid infinite loop
+        // run with step limit to avoid infinite loop
         int step_count = 0;
         const int MAX_STEPS = 1000;
         
@@ -60,6 +60,7 @@ main:
             step_count++;
         }
         
+        // debug
         if (step_count >= MAX_STEPS) {
             std::cout << "\nProgram stopped after " << MAX_STEPS << " steps (possible infinite loop)" << std::endl;
         }

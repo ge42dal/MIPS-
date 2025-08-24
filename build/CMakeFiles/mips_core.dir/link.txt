@@ -1,2 +1,2 @@
-/usr/bin/ar qc libmips_core.a CMakeFiles/mips_core.dir/src/mips_core.cpp.o CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o CMakeFiles/mips_core.dir/src/assembler.cpp.o
+/usr/bin/ar qc libmips_core.a CMakeFiles/mips_core.dir/src/mips_core.cpp.o CMakeFiles/mips_core.dir/src/cpu_instructions.cpp.o CMakeFiles/mips_core.dir/src/assembler.cpp.o CMakeFiles/mips_core.dir/src/debugger.cpp.o
 /usr/bin/ranlib libmips_core.a

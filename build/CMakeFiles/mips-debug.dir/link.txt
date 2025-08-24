@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -g -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/mips-debug.dir/src/debug_main.cpp.o" -o mips-debug  libmips_core.a

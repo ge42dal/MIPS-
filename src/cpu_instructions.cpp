@@ -177,12 +177,12 @@ void CPU::execute_arith_logic_imm(const Instruction& instr) {
     Register rs_reg = static_cast<Register>(instr.rs);
     Register rt_reg = static_cast<Register>(instr.rt);
     
-    uint32_t rs_val = state_.get_register(rs_reg);
+    uint32_t rs_val = state_.get_register(rs_reg); // registers_[index]
     uint32_t result = 0;
     
     switch (instr.opcode) {
         case 0b001000: // addi
-            result = rs_val + sign_extend_16(instr.immediate);
+            result = rs_val + sign_extend_16(instr.immediate); // cast immediate val to 32 bit
             break;
         case 0b001001: // addiu
             result = rs_val + sign_extend_16(instr.immediate);
@@ -204,7 +204,7 @@ void CPU::execute_arith_logic_imm(const Instruction& instr) {
             break;
     }
     
-    state_.set_register(rt_reg, result);
+    state_.set_register(rt_reg, result); // set second source register to res
 }
 
 void CPU::execute_load_imm(const Instruction& instr) {

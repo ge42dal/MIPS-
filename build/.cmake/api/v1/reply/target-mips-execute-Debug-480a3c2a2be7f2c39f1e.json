@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "mips-interpret"
+			"path" : "mips-execute"
 		}
 	],
 	"backtrace" : 1,
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 27,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 28,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -81,7 +81,7 @@
 			"id" : "mips_core::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "mips-interpret::@6890427a1f51a3e7e1df",
+	"id" : "mips-execute::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -98,8 +98,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "mips-interpret",
-	"nameOnDisk" : "mips-interpret",
+	"name" : "mips-execute",
+	"nameOnDisk" : "mips-execute",
 	"paths" : 
 	{
 		"build" : ".",
@@ -120,7 +120,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/mips_interpret.cpp",
+			"path" : "src/mips_execute.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
