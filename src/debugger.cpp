@@ -48,7 +48,7 @@ bool Debugger::load_program_from_string(const std::string& assembly_text) {
             return false;
         }
         
-        // Load binary into CPU memory
+        // load binary into CPU memory
         uint32_t main_address = assembler_.get_main_address();
         for (size_t i = 0; i < binary.size(); ++i) {
             cpu_.get_state().store_byte(main_address + i, binary[i]);

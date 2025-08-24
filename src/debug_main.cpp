@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
             return 1;
         }
         
-        // Start debugging session
+        // start debugging sesh
         debugger.run();
         
         std::cout << "Debugging session ended." << std::endl;
