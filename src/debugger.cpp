@@ -98,7 +98,9 @@ void Debugger::run() {
     
     running_ = true;
     std::cout << "MIPS Debugger - Type 'help' for commands" << std::endl;
+    std::cout.flush();
     print_current_instruction();
+    std::cout.flush();
     
     std::string input;
     while (running_ && std::getline(std::cin, input)) {
@@ -435,6 +437,7 @@ void Debugger::capture_state() {
 
 void Debugger::print_prompt() {
     std::cout << "> ";
+    std::cout.flush();
 }
 
 std::string Debugger::format_instruction_at_address(uint32_t address) {

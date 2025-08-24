@@ -12,6 +12,7 @@ int main(int argc, char* argv[]) {
     std::string assembly_file = argv[1];
     
     try {
+        std::cout << "Creating debugger..." << std::endl;
         mips::Debugger debugger;
         
         std::cout << "Loading assembly file: " << assembly_file << std::endl;
@@ -21,6 +22,7 @@ int main(int argc, char* argv[]) {
             return 1;
         }
         
+        std::cout << "Starting debugging session..." << std::endl;
         // start debugging sesh
         debugger.run();
         
