@@ -10,19 +10,19 @@ int main(int argc, char* argv[]) {
     }
     
     try {
-        // Read binary file
+        // read binary file
         uint32_t main_address;
         auto binary_data = mips::BinaryFormat::read_binary_file(argv[1], main_address);
         
-        // Create CPU and load program
+        // create CPU and load program
         mips::CPU cpu;
         cpu.get_state().load_memory(binary_data, 0);
         cpu.get_state().set_pc(main_address);
         
-        // Initialize stack pointer to end of memory
+        // init stack pointer to end of memory
         cpu.get_state().set_register(mips::Register::SP, 0xFFFFFFFC);
         
-        // Run the program
+        // run
         std::cout << "Starting MIPS program execution at address 0x" 
                   << std::hex << main_address << std::dec << std::endl;
         

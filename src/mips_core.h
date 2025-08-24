@@ -11,7 +11,7 @@
 
 namespace mips {
 
-// MIPS register definitions
+// MIPS register defs
 enum class Register : uint8_t {
     ZERO = 0, AT = 1, V0 = 2, V1 = 3,
     A0 = 4, A1 = 5, A2 = 6, A3 = 7,
@@ -23,14 +23,14 @@ enum class Register : uint8_t {
     GP = 28, SP = 29, S8 = 30, RA = 31
 };
 
-// Instruction formats
+// instruction formats
 enum class InstructionType {
-    R_TYPE,     // Register format
-    I_TYPE,     // Immediate format
-    J_TYPE      // Jump format
+    R_TYPE,     // reg format
+    I_TYPE,     // imm format
+    J_TYPE      // jump format
 };
 
-// Instruction categories
+// instruction categories
 enum class InstructionCategory {
     ARITH_LOGIC,
     DIV_MULT,

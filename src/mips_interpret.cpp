@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
     }
     
     try {
-        // Read and assemble the text file
+        // read and assemble the text file
         std::ifstream input(argv[1]);
         if (!input) {
             std::cerr << "Error: Cannot open input file: " << argv[1] << std::endl;
@@ -33,15 +33,15 @@ int main(int argc, char* argv[]) {
             return 1;
         }
         
-        // Create CPU and load program
+        // create CPU and load program
         mips::CPU cpu;
         cpu.get_state().load_memory(binary_data, 0);
         cpu.get_state().set_pc(main_address);
         
-        // Initialize stack pointer to end of memory
+        // init stack pointer to end of memory
         cpu.get_state().set_register(mips::Register::SP, 0xFFFFFFFC);
         
-        // Run the program
+        // run the program
         std::cout << "Starting MIPS program execution at address 0x" 
                   << std::hex << main_address << std::dec << std::endl;
         

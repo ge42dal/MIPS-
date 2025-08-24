@@ -4,13 +4,13 @@ project(MIPS_Interpreter)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Add compiler flags for debugging and warnings
+# add compiler flags for debugging and warnings
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -g")
 
-# Include directories
+# include directories
 include_directories(src)
 
-# Core library sources
+# core library sources
 set(CORE_SOURCES
     src/mips_core.cpp
     src/cpu_instructions.cpp
@@ -18,10 +18,10 @@ set(CORE_SOURCES
     src/debugger.cpp
 )
 
-# Create static library for the core functionality
+# create static library for the core functionality
 add_library(mips_core STATIC ${CORE_SOURCES})
 
-# Create executables
+# create executables
 add_executable(mips-assemble src/mips_assemble.cpp)
 target_link_libraries(mips-assemble mips_core)
 
@@ -31,10 +31,10 @@ target_link_libraries(mips-interpret mips_core)
 add_executable(mips-execute src/mips_execute.cpp)
 target_link_libraries(mips-execute mips_core)
 
-# Create debugger executable
+# create debugger executable
 add_executable(mips-debug src/debug_main.cpp)
 target_link_libraries(mips-debug mips_core)
 
-# Optional: Create a test executable
+# create a test executable
 add_executable(mips-test src/main.cpp)
 target_link_libraries(mips-test mips_core)

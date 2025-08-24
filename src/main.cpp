@@ -7,9 +7,9 @@
 int main() {
     std::cout << "MIPS Interpreter Test Program" << std::endl;
     
-    // Test basic functionality
+    // test basic functionality
     try {
-        // Create a simple test program
+        // create a simple test program
         std::string test_program = R"(
 main:
     addi $t0, $zero, 42
@@ -23,7 +23,7 @@ main:
         std::cout << "Test program:" << std::endl;
         std::cout << test_program << std::endl;
         
-        // Assemble the program
+        // asssemble the program
         mips::Assembler assembler;
         auto binary_data = assembler.assemble_text(test_program);
         
@@ -38,7 +38,7 @@ main:
         std::cout << "Assembly successful! Binary size: " << binary_data.size() << " bytes" << std::endl;
         std::cout << "Main address: 0x" << std::hex << assembler.get_main_address() << std::dec << std::endl;
         
-        // Create CPU and run program
+        // create CPU and run program
         mips::CPU cpu;
         cpu.get_state().load_memory(binary_data, 0); // store bytes in pages
         cpu.get_state().set_pc(assembler.get_main_address()); // set pc to main address
@@ -47,7 +47,7 @@ main:
         std::cout << "\nExecuting program..." << std::endl;
         std::cout << "Output: ";
         
-        // debug: Print first few instructions
+        // debug: print first few instructions
         std::cout << "\nFirst instruction at PC=0: 0x" << std::hex 
                   << cpu.get_state().load_word(0) << std::dec << std::endl;
         

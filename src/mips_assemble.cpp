@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
     
     try {
         if (argc == 1) {
-            // Read from stdin, write to stdout
+            // read from stdin, write to stdout
             auto binary_data = assembler.assemble_stream(std::cin);
             if (assembler.has_errors()) {
                 for (const auto& error : assembler.get_errors()) {
@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
             mips::BinaryFormat::write_binary(binary_data, std::cout, assembler.get_main_address());
         }
         else if (argc == 2) {
-            // Read from input file, write to stdout
+            // read from input file, write to stdout
             std::ifstream input(argv[1]);
             if (!input) {
                 std::cerr << "Error: Cannot open input file: " << argv[1] << std::endl;
@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
             mips::BinaryFormat::write_binary(binary_data, std::cout, assembler.get_main_address());
         }
         else if (argc == 3) {
-            // Read from input file, write to output file
+            // read from input file, write to output file
             std::ifstream input(argv[1]);
             if (!input) {
                 std::cerr << "Error: Cannot open input file: " << argv[1] << std::endl;
