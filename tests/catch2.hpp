@@ -1,7 +1,6 @@
 #pragma once
 
-// Catch2 single header include - simplified version for this project
-#define CATCH_CONFIG_MAIN
+// catch2 single header include 
 
 #ifndef CATCH2_HPP
 #define CATCH2_HPP
@@ -11,6 +10,7 @@
 #include <string>
 #include <functional>
 #include <sstream>
+#include <type_traits>
 
 namespace Catch {
 
@@ -64,16 +64,20 @@ private:
     std::string message;
 };
 
-// Helper to convert values to string for output
+// helper to convert values to string for output
 template<typename T>
 std::string to_string_helper(const T& value) {
-    std::ostringstream oss;
-    oss << value;
-    return oss.str();
+    if constexpr (std::is_enum_v<T>) {
+        return std::to_string(static_cast<int>(value));
+    } else {
+        std::ostringstream oss;
+        oss << value;
+        return oss.str();
+    }
 }
 
 template<typename T, typename U>
-void require_equal(const T& actual, const U& expected, const char* file, int line) {
+inline void require_equal(const T& actual, const U& expected, const char* file, int line) {
     if (!(actual == expected)) {
         std::ostringstream oss;
         oss << "Assertion failed at " << file << ":" << line 
@@ -83,7 +87,7 @@ void require_equal(const T& actual, const U& expected, const char* file, int lin
 }
 
 template<typename T>
-void require_true(const T& condition, const char* file, int line) {
+inline void require_true(const T& condition, const char* file, int line) {
     if (!condition) {
         std::ostringstream oss;
         oss << "Assertion failed at " << file << ":" << line << " - Expected true, got false";
@@ -92,7 +96,7 @@ void require_true(const T& condition, const char* file, int line) {
 }
 
 template<typename T>
-void require_false(const T& condition, const char* file, int line) {
+inline void require_false(const T& condition, const char* file, int line) {
     if (condition) {
         std::ostringstream oss;
         oss << "Assertion failed at " << file << ":" << line << " - Expected false, got true";
@@ -100,22 +104,22 @@ void require_false(const T& condition, const char* file, int line) {
     }
 }
 
-void require_throws(std::function<void()> func, const char* file, int line) {
+inline void require_throws(std::function<void()> func, const char* file, int line) {
     try {
         func();
         std::ostringstream oss;
         oss << "Assertion failed at " << file << ":" << line << " - Expected exception, but none was thrown";
         throw AssertionFailure(oss.str());
     } catch (const AssertionFailure&) {
-        throw; // Re-throw assertion failures
+        throw; // re-throw assertion failures
     } catch (...) {
-        // Expected exception was thrown, test passes
+        // expected exception was thrown, test passes
     }
 }
 
 } // namespace Catch
 
-// Macros with unique naming using __LINE__
+// macros with unique naming using __LINE__
 #define CONCAT_IMPL(x, y) x##y
 #define CONCAT(x, y) CONCAT_IMPL(x, y)
 #define UNIQUE_NAME(base) CONCAT(base, __LINE__)
@@ -133,7 +137,7 @@ void require_throws(std::function<void()> func, const char* file, int line) {
 #define REQUIRE_FALSE(condition) Catch::require_false(condition, __FILE__, __LINE__)
 #define REQUIRE_THROWS(expression) Catch::require_throws([&]() { expression; }, __FILE__, __LINE__)
 
-// Main function for tests
+// main function for tests
 #define CATCH_CONFIG_MAIN \
 int main() { \
     Catch::TestRegistry::instance().run_all(); \

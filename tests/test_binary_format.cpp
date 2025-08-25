@@ -17,16 +17,16 @@ main:
     REQUIRE_FALSE(assembler.has_errors());
     uint32_t main_address = assembler.get_main_address();
     
-    // Write binary to stream
+    // write binary to stream
     std::ostringstream output_stream;
     mips::BinaryFormat::write_binary(binary_data, output_stream, main_address);
     
-    // Read binary back from stream
+    // eead binary back from stream
     std::istringstream input_stream(output_stream.str());
     uint32_t read_main_address;
     auto read_binary = mips::BinaryFormat::read_binary(input_stream, read_main_address);
     
-    // Verify data integrity
+    // verify data integrity
     REQUIRE_EQ(read_main_address, main_address);
     REQUIRE_EQ(read_binary.size(), binary_data.size());
     
@@ -51,7 +51,7 @@ TEST_CASE("BinaryFormat - Empty program handling") {
 }
 
 TEST_CASE("Instruction - Decode and encode roundtrip") {
-    // Test R-type instruction
+    // test R-type instruction
     uint32_t original_word = 0x01094020; // add $t0, $t0, $t1
     mips::Instruction instr = mips::Instruction::decode(original_word);
     

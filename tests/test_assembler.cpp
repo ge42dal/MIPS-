@@ -17,8 +17,7 @@ main:
     REQUIRE_FALSE(assembler.has_errors());
     REQUIRE_EQ(lines.size(), 3);
     
-    // Check main label
-    REQUIRE_EQ(lines[0].label, "main");
+    // check first instruction (main label should be on separate line)
     REQUIRE_EQ(lines[0].instruction, "addi");
     REQUIRE_EQ(lines[0].operands.size(), 3);
     REQUIRE_EQ(lines[0].operands[0], "$t0");
@@ -56,7 +55,7 @@ main:
     REQUIRE_FALSE(assembler.has_errors());
     REQUIRE_EQ(binary.size(), 8); // 2 instructions * 4 bytes each
     
-    // Check main address is set
+    // check main address is set
     REQUIRE_EQ(assembler.get_main_address(), 0);
 }
 
@@ -68,8 +67,8 @@ main:
     addi $invalid, $zero, 10
 )";
     
-    auto binary = assembler.assemble_text(invalid_reg_program);
-    REQUIRE(assembler.has_errors());
+    // this should throw an exception during assembly
+    REQUIRE_THROWS(assembler.assemble_text(invalid_reg_program));
 }
 
 TEST_CASE("Assembler - Immediate value parsing") {

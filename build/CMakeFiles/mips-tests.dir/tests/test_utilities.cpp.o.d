@@ -1,5 +1,5 @@
-CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.o: \
-  /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_binary_format.cpp \
+CMakeFiles/mips-tests.dir/tests/test_utilities.cpp.o: \
+  /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_utilities.cpp \
   /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/catch2.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
@@ -877,6 +877,4 @@ CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
-  /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/../src/assembler.h \
-  /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/mips_core.h \
   /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/../src/mips_core.h
