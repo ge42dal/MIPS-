@@ -4,5 +4,6 @@
 /Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles/mips-execute.dir
 /Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles/mips-debug.dir
 /Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles/mips-test.dir
+/Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles/mips-tests.dir
 /Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles/edit_cache.dir
 /Users/luisgonzales/Desktop/cpp_projects/MIPS/build/CMakeFiles/rebuild_cache.dir

@@ -287,7 +287,7 @@ void Debugger::print_machine_state_changes() {
     const MachineState& state = cpu_.get_state();
     bool changes_found = false;
     
-    // Check register changes
+    // check register changes
     for (int i = 0; i < 32; ++i) {
         Register reg = static_cast<Register>(i);
         uint32_t current = state.get_register(reg);
@@ -395,7 +395,7 @@ Register Debugger::parse_register_name(const std::string& name) {
     try {
         return string_to_register(name);
     } catch (const std::exception&) {
-        return static_cast<Register>(255); // Invalid register
+        return static_cast<Register>(255); // invalid register
     }
 }
 
@@ -404,12 +404,12 @@ uint32_t Debugger::parse_address(const std::string& addr_str) {
         throw std::invalid_argument("Empty address string");
     }
     
-    // Handle hex addresses (0x prefix)
+    // handle hex addresses (0x prefix)
     if (addr_str.substr(0, 2) == "0x" || addr_str.substr(0, 2) == "0X") {
         return std::stoul(addr_str, nullptr, 16);
     }
     
-    // Handle decimal addresses
+    // handle decimal addresses
     return std::stoul(addr_str, nullptr, 10);
 }
 
@@ -435,7 +435,7 @@ std::string Debugger::format_instruction_at_address(uint32_t address) {
         return it->second;
     }
     
-    // If no assembly found, try to decode the instruction from memory
+    // if no assembly found, try to decode the instruction from memory
     try {
         uint32_t instruction_word = cpu_.get_state().load_word(address);
         if (instruction_word == 0) {

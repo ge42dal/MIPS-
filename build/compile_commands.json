@@ -52,5 +52,35 @@
   "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-test.dir/src/main.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/src/main.cpp",
   "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/src/main.cpp",
   "output": "CMakeFiles/mips-test.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-tests.dir/tests/test_main.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_main.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_main.cpp",
+  "output": "CMakeFiles/mips-tests.dir/tests/test_main.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-tests.dir/tests/test_assembler.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_assembler.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_assembler.cpp",
+  "output": "CMakeFiles/mips-tests.dir/tests/test_assembler.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-tests.dir/tests/test_cpu.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_cpu.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_cpu.cpp",
+  "output": "CMakeFiles/mips-tests.dir/tests/test_cpu.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_binary_format.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_binary_format.cpp",
+  "output": "CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.o"
+},
+{
+  "directory": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/build",
+  "command": "/usr/bin/c++  -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/src -I/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests  -Wall -Wextra -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/mips-tests.dir/tests/test_utilities.cpp.o -c /Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_utilities.cpp",
+  "file": "/Users/luisgonzales/Desktop/cpp_projects/MIPS/tests/test_utilities.cpp",
+  "output": "CMakeFiles/mips-tests.dir/tests/test_utilities.cpp.o"
 }
 ]

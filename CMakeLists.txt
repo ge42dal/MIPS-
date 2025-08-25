@@ -38,3 +38,14 @@ target_link_libraries(mips-debug mips_core)
 # create a test executable
 add_executable(mips-test src/main.cpp)
 target_link_libraries(mips-test mips_core)
+
+# create comprehensive test suite
+add_executable(mips-tests 
+    tests/test_main.cpp
+    tests/test_assembler.cpp
+    tests/test_cpu.cpp
+    tests/test_binary_format.cpp
+    tests/test_utilities.cpp
+)
+target_link_libraries(mips-tests mips_core)
+target_include_directories(mips-tests PRIVATE tests)

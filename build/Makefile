@@ -194,6 +194,19 @@ mips-test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-test.dir/build.make CMakeFiles/mips-test.dir/build
 .PHONY : mips-test/fast
 
+#=============================================================================
+# Target rules for targets named mips-tests
+
+# Build rule for target.
+mips-tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mips-tests
+.PHONY : mips-tests
+
+# fast build rule for target.
+mips-tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/build
+.PHONY : mips-tests/fast
+
 src/assembler.o: src/assembler.cpp.o
 .PHONY : src/assembler.o
 
@@ -410,6 +423,126 @@ src/mips_interpret.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-interpret.dir/build.make CMakeFiles/mips-interpret.dir/src/mips_interpret.cpp.s
 .PHONY : src/mips_interpret.cpp.s
 
+tests/test_assembler.o: tests/test_assembler.cpp.o
+.PHONY : tests/test_assembler.o
+
+# target to build an object file
+tests/test_assembler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_assembler.cpp.o
+.PHONY : tests/test_assembler.cpp.o
+
+tests/test_assembler.i: tests/test_assembler.cpp.i
+.PHONY : tests/test_assembler.i
+
+# target to preprocess a source file
+tests/test_assembler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_assembler.cpp.i
+.PHONY : tests/test_assembler.cpp.i
+
+tests/test_assembler.s: tests/test_assembler.cpp.s
+.PHONY : tests/test_assembler.s
+
+# target to generate assembly for a file
+tests/test_assembler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_assembler.cpp.s
+.PHONY : tests/test_assembler.cpp.s
+
+tests/test_binary_format.o: tests/test_binary_format.cpp.o
+.PHONY : tests/test_binary_format.o
+
+# target to build an object file
+tests/test_binary_format.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.o
+.PHONY : tests/test_binary_format.cpp.o
+
+tests/test_binary_format.i: tests/test_binary_format.cpp.i
+.PHONY : tests/test_binary_format.i
+
+# target to preprocess a source file
+tests/test_binary_format.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.i
+.PHONY : tests/test_binary_format.cpp.i
+
+tests/test_binary_format.s: tests/test_binary_format.cpp.s
+.PHONY : tests/test_binary_format.s
+
+# target to generate assembly for a file
+tests/test_binary_format.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_binary_format.cpp.s
+.PHONY : tests/test_binary_format.cpp.s
+
+tests/test_cpu.o: tests/test_cpu.cpp.o
+.PHONY : tests/test_cpu.o
+
+# target to build an object file
+tests/test_cpu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_cpu.cpp.o
+.PHONY : tests/test_cpu.cpp.o
+
+tests/test_cpu.i: tests/test_cpu.cpp.i
+.PHONY : tests/test_cpu.i
+
+# target to preprocess a source file
+tests/test_cpu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_cpu.cpp.i
+.PHONY : tests/test_cpu.cpp.i
+
+tests/test_cpu.s: tests/test_cpu.cpp.s
+.PHONY : tests/test_cpu.s
+
+# target to generate assembly for a file
+tests/test_cpu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_cpu.cpp.s
+.PHONY : tests/test_cpu.cpp.s
+
+tests/test_main.o: tests/test_main.cpp.o
+.PHONY : tests/test_main.o
+
+# target to build an object file
+tests/test_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_main.cpp.o
+.PHONY : tests/test_main.cpp.o
+
+tests/test_main.i: tests/test_main.cpp.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_main.cpp.i
+.PHONY : tests/test_main.cpp.i
+
+tests/test_main.s: tests/test_main.cpp.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_main.cpp.s
+.PHONY : tests/test_main.cpp.s
+
+tests/test_utilities.o: tests/test_utilities.cpp.o
+.PHONY : tests/test_utilities.o
+
+# target to build an object file
+tests/test_utilities.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_utilities.cpp.o
+.PHONY : tests/test_utilities.cpp.o
+
+tests/test_utilities.i: tests/test_utilities.cpp.i
+.PHONY : tests/test_utilities.i
+
+# target to preprocess a source file
+tests/test_utilities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_utilities.cpp.i
+.PHONY : tests/test_utilities.cpp.i
+
+tests/test_utilities.s: tests/test_utilities.cpp.s
+.PHONY : tests/test_utilities.s
+
+# target to generate assembly for a file
+tests/test_utilities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mips-tests.dir/build.make CMakeFiles/mips-tests.dir/tests/test_utilities.cpp.s
+.PHONY : tests/test_utilities.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -423,6 +556,7 @@ help:
 	@echo "... mips-execute"
 	@echo "... mips-interpret"
 	@echo "... mips-test"
+	@echo "... mips-tests"
 	@echo "... mips_core"
 	@echo "... src/assembler.o"
 	@echo "... src/assembler.i"
@@ -451,6 +585,21 @@ help:
 	@echo "... src/mips_interpret.o"
 	@echo "... src/mips_interpret.i"
 	@echo "... src/mips_interpret.s"
+	@echo "... tests/test_assembler.o"
+	@echo "... tests/test_assembler.i"
+	@echo "... tests/test_assembler.s"
+	@echo "... tests/test_binary_format.o"
+	@echo "... tests/test_binary_format.i"
+	@echo "... tests/test_binary_format.s"
+	@echo "... tests/test_cpu.o"
+	@echo "... tests/test_cpu.i"
+	@echo "... tests/test_cpu.s"
+	@echo "... tests/test_main.o"
+	@echo "... tests/test_main.i"
+	@echo "... tests/test_main.s"
+	@echo "... tests/test_utilities.o"
+	@echo "... tests/test_utilities.i"
+	@echo "... tests/test_utilities.s"
 .PHONY : help
 
 
