@@ -1,4 +1,5 @@
-*MIPS interpreter report* 
+# MIPS interpreter report
+
 The MIPS interpreter employs a modular, object-oriented design to simulate the behavior of a MIPS processor, which is centered around the library core (`mips_core`). The core library provides basic functionality for the CPU, machine state (memory and registers) for instruction execution and assembly. We separate concerns through various classes:
 
 **Assembler** handles the conversion of MIPS assembly code into binary instructions.
