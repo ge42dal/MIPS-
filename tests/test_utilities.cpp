@@ -73,7 +73,7 @@ TEST_CASE("MachineState - Little-endian memory layout") {
 TEST_CASE("CPU - Basic functionality") {
     mips::CPU cpu;
     
-    // test that CPU can be created and initialized properly
+    // test CPU initialization
     REQUIRE_EQ(cpu.get_state().get_register(mips::Register::ZERO), 0);
     
     // test register operations
@@ -83,17 +83,6 @@ TEST_CASE("CPU - Basic functionality") {
     // test that ZERO register cannot be modified
     cpu.get_state().set_register(mips::Register::ZERO, 42);
     REQUIRE_EQ(cpu.get_state().get_register(mips::Register::ZERO), 0);
-}
-
-TEST_CASE("CPU - Public interface validation") {
-    mips::CPU cpu;
-    
-    // test that CPU can be created and basic operations work
-    REQUIRE_EQ(cpu.get_state().get_register(mips::Register::ZERO), 0);
-    
-    // test setting and getting registers
-    cpu.get_state().set_register(mips::Register::T0, 42);
-    REQUIRE_EQ(cpu.get_state().get_register(mips::Register::T0), 42);
     
     // test PC operations
     cpu.get_state().set_pc(100);

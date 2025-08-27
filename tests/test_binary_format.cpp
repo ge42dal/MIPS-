@@ -21,7 +21,7 @@ main:
     std::ostringstream output_stream;
     mips::BinaryFormat::write_binary(binary_data, output_stream, main_address);
     
-    // eead binary back from stream
+    // read binary back from stream
     std::istringstream input_stream(output_stream.str());
     uint32_t read_main_address;
     auto read_binary = mips::BinaryFormat::read_binary(input_stream, read_main_address);

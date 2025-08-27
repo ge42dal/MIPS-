@@ -1,7 +1,12 @@
 #include "catch2.hpp"
 #include "../src/mips_core.h"
 #include "../src/assembler.h"
-#include <sstream>
+
+// helper function to load program into CPU
+void load_program_into_cpu(mips::CPU& cpu, const std::vector<uint8_t>& binary) {
+    cpu.get_state().load_memory(binary, 0);
+    cpu.get_state().set_pc(0);
+}
 
 TEST_CASE("CPU - Register operations") {
     mips::MachineState state;
@@ -58,11 +63,7 @@ main:
     auto binary = assembler.assemble_text(program);
     REQUIRE_FALSE(assembler.has_errors());
     
-    // load program into CPU
-    for (size_t i = 0; i < binary.size(); ++i) {
-        cpu.get_state().store_byte(i, binary[i]);
-    }
-    cpu.get_state().set_pc(0);
+    load_program_into_cpu(cpu, binary);
     
     // exec first instruction: addi $t0, $zero, 10
     cpu.run_single_step();
@@ -92,11 +93,7 @@ main:
     auto binary = assembler.assemble_text(program);
     REQUIRE_FALSE(assembler.has_errors());
     
-    // load program into CPU
-    for (size_t i = 0; i < binary.size(); ++i) {
-        cpu.get_state().store_byte(i, binary[i]);
-    }
-    cpu.get_state().set_pc(0);
+    load_program_into_cpu(cpu, binary);
     
     // exec instructions
     cpu.run_single_step(); // addi $t0, $zero, 0x1000
@@ -122,11 +119,7 @@ target:
     auto binary = assembler.assemble_text(program);
     REQUIRE_FALSE(assembler.has_errors());
     
-    // load program into CPU
-    for (size_t i = 0; i < binary.size(); ++i) {
-        cpu.get_state().store_byte(i, binary[i]);
-    }
-    cpu.get_state().set_pc(0);
+    load_program_into_cpu(cpu, binary);
     
     // exec jump instruction
     cpu.run_single_step(); // j target
@@ -155,11 +148,7 @@ equal:
     auto binary = assembler.assemble_text(program);
     REQUIRE_FALSE(assembler.has_errors());
     
-    // load program into CPU
-    for (size_t i = 0; i < binary.size(); ++i) {
-        cpu.get_state().store_byte(i, binary[i]);
-    }
-    cpu.get_state().set_pc(0);
+    load_program_into_cpu(cpu, binary);
     
     // execute instructions
     cpu.run_single_step(); // addi $t0, $zero, 5
@@ -185,11 +174,7 @@ main:
     auto binary = assembler.assemble_text(program);
     REQUIRE_FALSE(assembler.has_errors());
     
-    // load program into CPU
-    for (size_t i = 0; i < binary.size(); ++i) {
-        cpu.get_state().store_byte(i, binary[i]);
-    }
-    cpu.get_state().set_pc(0);
+    load_program_into_cpu(cpu, binary);
     
     // exec instructions
     cpu.run_single_step(); // addi $a0, $zero, 42

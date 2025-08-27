@@ -1,7 +1,22 @@
 #include "catch2.hpp"
 #include "../src/assembler.h"
 #include "../src/mips_core.h"
+#include <stdexcept>
 #include <sstream>
+
+// helper function to assemble and validate program
+std::vector<uint8_t> assemble_program(const std::string& program, bool should_succeed = true) {
+    mips::Assembler assembler;
+    auto binary = assembler.assemble_text(program);
+    
+    if (should_succeed) {
+        REQUIRE_FALSE(assembler.has_errors());
+    } else {
+        REQUIRE(assembler.has_errors());
+    }
+    
+    return binary;
+}
 
 TEST_CASE("Assembler - Valid instruction parsing") {
     mips::Assembler assembler;
@@ -17,12 +32,13 @@ main:
     REQUIRE_FALSE(assembler.has_errors());
     REQUIRE_EQ(lines.size(), 3);
     
-    // check first instruction (main label should be on separate line)
-    REQUIRE_EQ(lines[0].instruction, "addi");
-    REQUIRE_EQ(lines[0].operands.size(), 3);
-    REQUIRE_EQ(lines[0].operands[0], "$t0");
-    REQUIRE_EQ(lines[0].operands[1], "$zero");
-    REQUIRE_EQ(lines[0].operands[2], "42");
+    // verify first instruction parsing
+    const auto& first_instr = lines[0];
+    REQUIRE_EQ(first_instr.instruction, "addi");
+    REQUIRE_EQ(first_instr.operands.size(), 3);
+    REQUIRE_EQ(first_instr.operands[0], "$t0");
+    REQUIRE_EQ(first_instr.operands[1], "$zero");
+    REQUIRE_EQ(first_instr.operands[2], "42");
 }
 
 TEST_CASE("Assembler - Invalid instruction handling") {
